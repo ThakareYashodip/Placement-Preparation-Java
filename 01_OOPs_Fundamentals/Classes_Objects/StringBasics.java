@@ -1,7 +1,7 @@
 public class StringBasics {
     public static void main(String[] args) {
         String str = " Java Mastery ";
-        String str2 = "java mastery";
+        String str2 = "Java Mastery";
 
         // Original
         System.out.println("Original: '" + str + "'");
@@ -9,6 +9,8 @@ public class StringBasics {
         // Trim
         System.out.println("Trimmed: '" + str.trim() + "'");
 
+        //compareTo
+        System.out.println("CompareTo: " + str.compareTo(str2));
         // Length
         System.out.println("Length: " + str.length());
 
@@ -62,7 +64,7 @@ public class StringBasics {
         System.out.println("Joined string: " + joined);
 
         // Repeat
-        System.out.println("Repeat 'Hi ' 3 times: " + "Hi ".repeat(3));
+        System.out.println("Repeat 'Hi ' 3 times: " + " HI ".repeat(3));
 
         // Strip (Java 11+ alternative to trim)
         System.out.println("Stripped: '" + str.strip() + "'");
