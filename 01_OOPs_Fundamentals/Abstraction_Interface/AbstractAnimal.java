@@ -1,12 +1,12 @@
-abstract class Animal {
-    abstract void sound();  // Abstract method
+abstract class Animal1 {
+    abstract void sound(); // Abstract method
 
-    void sleep() {          // Concrete method
+    void sleep() { // Concrete method
         System.out.println("Animal sleeps...");
     }
 }
 
-class Dog extends Animal {
+class Dogs extends Animal1 {
     @Override
     void sound() {
         System.out.println("Dog barks");
@@ -15,7 +15,7 @@ class Dog extends Animal {
 
 public class AbstractAnimal {
     public static void main(String[] args) {
-        Animal a = new Dog(); // Reference of abstract class
+        Animal1 a = new Dogs(); // Reference of abstract class
         a.sound();
         a.sleep();
     }
