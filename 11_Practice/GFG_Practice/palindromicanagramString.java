@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class palindromicanagramString {
@@ -23,6 +25,17 @@ public class palindromicanagramString {
             System.out.println("The anagram string is a palindrome");
         } else {
             System.out.println("Not a palindrome");
+        }
+
+        String str = "geeks";
+        Integer count[] = new Integer[str.length()];
+        for (int i = 0; i < count.length; i++) {
+            count[i] = (int)str.charAt(i);
+            System.out.println(count[i]);
+        }
+        Arrays.sort(count,Collections.reverseOrder());
+        for (Integer integer : count) {
+            System.out.println((char)(int)integer);
         }
     }
 }
