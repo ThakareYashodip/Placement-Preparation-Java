@@ -21,11 +21,18 @@ public class jumpingNum {
         }
         return true;
     }
-
+    
+    public static int factorial(int num){
+        if(num == 1){
+            return 1 ;
+        }
+        return num * factorial(num-1);
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number : ");
         int num = sc.nextInt();
         System.out.println( "Result : " + checkJumpingNumb(num));
+        System.out.println(factorial(num));
     }
 }
