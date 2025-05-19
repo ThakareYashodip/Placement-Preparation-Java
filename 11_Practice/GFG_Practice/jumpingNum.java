@@ -29,6 +29,52 @@ public class jumpingNum {
         return num * factorial(num - 1);
     }
 
+    public static int cntSq(int target) {
+        int count = 0;
+        for (int i = 1; i < target; i++) {
+            if (i * i < target) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int findSubString(String txt, String pat) {
+        int txtlength = txt.length();
+        int patlength = pat.length();
+
+        for (int i = 0; i <= txtlength - patlength; i++) {
+            int j;
+            for (j = 0; j < patlength; j++) {
+                if (txt.charAt(i + j) != pat.charAt(j)) {
+                    break;
+                }
+            }
+            if (patlength == j) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int heightBuilding(int arr[]) {
+        int count = 1;
+        if (arr.length == 0 || arr == null) {
+            return -1;
+        }
+        if (arr.length == 1) {
+            return 1;
+        }
+        int temp = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > temp) {
+                count++;
+                temp = arr[i];
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number : ");
@@ -48,6 +94,15 @@ public class jumpingNum {
         int r = 2;
         int temp2 = n - r;
         System.out.println("Result of nPr is : " + Math.abs(factorial(n) / factorial(temp2)));
+
+        // Count Squares
+        int target = 9;
+        System.out.println("Result of Count Squares is : " + cntSq(target));
+
+        String s1 = "GeeksForGeeks";
+        String s2 = "For";
+        System.err.println("First Occurence of substring is : " + findSubString(s1, s2));
+        System.err.println("First Occurence of substring is : " + s1.indexOf(s2));
 
     }
 }
