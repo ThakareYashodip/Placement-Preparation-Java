@@ -75,12 +75,21 @@ public class jumpingNum {
         return count;
     }
 
+    public static void printRevDigits(int number) {
+        int digit = 0;
+        while (number != 0) {
+            digit = digit * 10 + number % 10;
+            number /= 10;
+        }
+        System.err.println("The Reversed number is " + digit);
+    }
+
     public static void main(String[] args) {
         // Scanner sc = new Scanner(System.in);
         // System.out.println("Enter a number : ");
         int num = 5;
         System.out.println("Checking Jumping Number : " + checkJumpingNumb(num));
-        System.out.println("Factorial of number " +num + " is "+ factorial(num));
+        System.out.println("Factorial of number " + num + " is " + factorial(num));
 
         // Compute nCr
         int a = 5;
@@ -99,14 +108,19 @@ public class jumpingNum {
         int target = 9;
         System.out.println("Result of Count Squares is : " + cntSq(target));
 
-        //First Occurence of String subString
+        // First Occurence of String subString
         String s1 = "GeeksForGeeks";
         String s2 = "For";
         System.err.println("First Occurence of substring is : " + findSubString(s1, s2));
         System.err.println("First Occurence of substring is : " + s1.indexOf(s2) + "\n");
 
-        //Buildings Receiving sunlight
-        int arrr[] = new int[]{2,5,1,8,3};
+        // Buildings Receiving sunlight
+        int arrr[] = new int[] { 2, 5, 1, 8, 3 };
         System.out.println("Building count is : " + heightBuilding(arrr));
+
+        // Reverse Digit
+        int digits = 122;
+        System.out.println("The original digit is " + digits);
+        printRevDigits(digits);
     }
 }
