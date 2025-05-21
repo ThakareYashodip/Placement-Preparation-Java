@@ -40,9 +40,11 @@ public class StringRotation {
         String s1 = "abcd";
         String s2 = "cdab";
         System.out.println(areRotation(s1, s2)); // Output: true
+
         s1 = "aab";
         s2 = "aba";
         System.out.println(areRotation(s1, s2)); // Output: true
+        
         s1 = "abcd";
         s2 = "acbd";
         System.out.println(areRotation(s1, s2)); // Output: false
