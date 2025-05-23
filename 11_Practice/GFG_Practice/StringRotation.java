@@ -46,7 +46,7 @@ public class StringRotation {
         System.out.println(areRotation(s1, s2)); // Output: true
 
         s1 = "abcd";
-        s2 = "acbd";
+        s2 = "acbde";
         System.out.println(areRotation(s1, s2)); // Output: false
 
         s1 = "nitin";
