@@ -66,20 +66,15 @@ public class UncommonCharactersSetBased {
         for (char c : s2.toCharArray())
             set2.add(c);
 
-        System.out.println(set1 + "\n" + set2);
 
         Set<Character> uncommon = new TreeSet<>(set1);
         uncommon.addAll(set2);
-        System.out.println(uncommon);
 
         Set<Character> common = new TreeSet<>(set1);
-        System.out.println("Common" + common);
 
         common.retainAll(set2);
-        System.err.println("Common Retain All" + common);
 
         uncommon.removeAll(common);
-        System.out.println("Uncommon" + uncommon);
 
         System.out.print("Uncommon characters: ");
         for (char c : uncommon) {
