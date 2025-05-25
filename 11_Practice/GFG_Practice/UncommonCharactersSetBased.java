@@ -53,35 +53,45 @@
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class UncommonCharactersSetBased {
 
-public static void printUncommonCharacters(String s1, String s2) {
-Set<Character> set1 = new HashSet<>();
-Set<Character> set2 = new HashSet<>();
+    public static void printUncommonCharacters(String s1, String s2) {
+        Set<Character> set1 = new TreeSet<>();
+        Set<Character> set2 = new TreeSet<>();
 
-for (char c : s1.toCharArray()) set1.add(c);
-for (char c : s2.toCharArray()) set2.add(c);
+        for (char c : s1.toCharArray())
+            set1.add(c);
+        for (char c : s2.toCharArray())
+            set2.add(c);
 
-Set<Character> uncommon = new HashSet<>(set1);
-uncommon.addAll(set2);
+        System.out.println(set1 + "\n" + set2);
 
-Set<Character> common = new HashSet<>(set1);
-common.retainAll(set2);
+        Set<Character> uncommon = new TreeSet<>(set1);
+        uncommon.addAll(set2);
+        System.out.println(uncommon);
 
-uncommon.removeAll(common);
+        Set<Character> common = new TreeSet<>(set1);
+        System.out.println("Common" + common);
 
-System.out.print("Uncommon characters: ");
-for (char c : uncommon) {
-System.out.print(c + " ");
-}
-System.out.println();
-}
+        common.retainAll(set2);
+        System.err.println("Common Retain All" + common);
 
-public static void main(String[] args) {
-String s1 = "geeksforgeeks";
-String s2 = "geeksquiz";
+        uncommon.removeAll(common);
+        System.out.println("Uncommon" + uncommon);
 
-printUncommonCharacters(s1, s2);
-}
+        System.out.print("Uncommon characters: ");
+        for (char c : uncommon) {
+            System.out.print(c + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        String s1 = "geeksforgeeks";
+        String s2 = "geeksquiz";
+
+        printUncommonCharacters(s1, s2);
+    }
 }
