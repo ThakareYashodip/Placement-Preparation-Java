@@ -1,0 +1,13 @@
+class PairCubeCount{
+    public static pairCount(int target){
+        int cnt = 0 ;
+        for(int i = 1 ; i <= Math.cbrt(target); i++){
+            for(int j = 0 ; j <= Math.cbrt(target) ; j++){
+                if((a*a*a)+(b*b*b) == target){
+                    count++;
+                    break;
+                }
+            }
+        }
+        }
+}
