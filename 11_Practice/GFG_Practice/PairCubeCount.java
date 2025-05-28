@@ -14,5 +14,7 @@ public class PairCubeCount {
 
     public static void main(String[] args) {
         System.out.println(pairCount(9));
+        System.out.println(pairCount(27));
+        System.out.println(pairCount(36));
     }
 }
