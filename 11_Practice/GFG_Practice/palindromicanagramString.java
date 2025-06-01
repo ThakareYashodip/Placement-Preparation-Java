@@ -27,7 +27,7 @@ public class palindromicanagramString {
             System.out.println("Not a palindrome");
         }
 
-        String str = "geeks";
+        String str = "geeksgeeks";
         Integer count[] = new Integer[str.length()];
         for (int i = 0; i < count.length; i++) {
             count[i] = (int)str.charAt(i);
