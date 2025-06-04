@@ -12,7 +12,7 @@ public class palindromicanagramString {
             freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
         }
 
-        // Count how many characters have an odd frequency
+        // Count How Many characters have an odd frequency
         int oddCount = 0;
         for (int freq : freqMap.values()) {
             if (freq % 2 != 0) {
