@@ -49,7 +49,9 @@ public class TwoSum {
     public static void main(String[] args) {
 
         int[] arr = { 0, -1, 2, -3, 1 };
+        int length =  arr.len
         int target = -2;
+        System.out.println(arr);
 
         // Call the twoSum function and print the result
         if (twoSum(arr, target))
