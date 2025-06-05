@@ -40,7 +40,7 @@ public class TwoSum {
             else if (sum < target)
                 left++; // Move left pointer to the right
             else
-                right--; // Move right pointer to the left
+                right--; // Move right pointer to the leftP
         }
         // If no pair is found
         return false;
@@ -49,9 +49,10 @@ public class TwoSum {
     public static void main(String[] args) {
 
         int[] arr = { 0, -1, 2, -3, 1 };
-        int length =  arr.lent
+        int len =  arr.length-1;
         int target = -2;
-        System.out.println(arr);
+        System.out.println(arr[len--]);
+        System.out.println(arr[len]);
 
         // Call the twoSum function and print the result
         if (twoSum(arr, target))
