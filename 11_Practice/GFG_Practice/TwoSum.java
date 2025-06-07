@@ -48,7 +48,7 @@ public class TwoSum {
 
     public static void main(String[] args) {
 
-        int[] arr = { 0, -1, 2, -3, 1 };
+        int[] arr = { 0, -1, 2, -3, 1 ,5};
         int len =  arr.length-1;
         int target = -2;
         System.out.println(arr[len--]);
