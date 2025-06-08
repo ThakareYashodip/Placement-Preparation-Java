@@ -12,7 +12,7 @@ class Calculator {
     int add(int a, int b, int c) {
         return a + b + c;
     }
-    int add(int a, int b, int d,int m) {
+    int add(int a, int b, int c,int m) {
         return a + b + c + m;
     }
 }
