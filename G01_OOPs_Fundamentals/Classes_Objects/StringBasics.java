@@ -57,17 +57,17 @@ public class StringBasics {
         String emptyStr = "";
         String blankStr = "   ";
         System.out.println("Is emptyStr empty? " + emptyStr.isEmpty());
-        System.out.println("Is blankStr blank? " + blankStr.isBlank());
+        // System.out.println("Is blankStr blank? " + blankStr.isBlank());
 
         // Join
         String joined = String.join("-", "Java", "is", "awesome");
         System.out.println("Joined string: " + joined);
 
         // Repeat
-        System.out.println("Repeat 'Hi ' 3 times: " + " HI ".repeat(3));
+        // System.out.println("Repeat 'Hi ' 3 times: " + " HI ".repeat(3));
 
         // Strip (Java 11+ alternative to trim)
-        System.out.println("Stripped: '" + str.strip() + "'");
+        // System.out.println("Stripped: '" + str.strip() + "'");
 
         // Format
         String name = "Yashodip";
