@@ -11,7 +11,7 @@ public class palindromicanagramString {
         for (char ch : s.toCharArray()) {
             freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
         }
-
+        System.out.println(freqMap);
         // Count How Many characters have an odd frequency
         int oddCount = 0;
         for (int freq : freqMap.values()) {
@@ -30,12 +30,12 @@ public class palindromicanagramString {
         String str = "geeksgeeks";
         Integer count[] = new Integer[str.length()];
         for (int i = 0; i < count.length; i++) {
-            count[i] = (int)str.charAt(i);
+            count[i] = (int) str.charAt(i);
             System.out.println(count[i]);
         }
-        Arrays.sort(count,Collections.reverseOrder());
+        Arrays.sort(count, Collections.reverseOrder());
         for (Integer integer : count) {
-            System.out.println((char)(int)integer);
+            System.out.println((char) (int) integer);
         }
     }
 }
