@@ -63,7 +63,6 @@ public class LL {
         temp.next = null; // Remove the last node
     }
 
-    
     // size()
     public int size() {
         if (head == null)
