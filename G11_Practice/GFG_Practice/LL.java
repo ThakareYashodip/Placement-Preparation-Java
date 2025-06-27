@@ -46,7 +46,6 @@ public class LL {
         head = head.next;
     }
 
-    
     public void deleteAtLast() {
         if (isEmpty()) {
             return;
@@ -64,7 +63,7 @@ public class LL {
         temp.next = null; // Remove the last node
     }
 
-
+    
     // size()
     public int size() {
         if (head == null)
