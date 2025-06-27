@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 class Node {
     int data;
     Node next;
@@ -44,6 +46,38 @@ public class LL {
         head = head.next;
     }
 
+    
+    public void deleteAtLast() {
+        if (isEmpty()) {
+            return;
+        }
+        // If only one node
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        // Find second-to-last node
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null; // Remove the last node
+    }
+
+
+    // size()
+    public int size() {
+        if (head == null)
+            return 0;
+        Node temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
     // isEmpty()
     public boolean isEmpty() {
         return head == null;
@@ -64,6 +98,7 @@ public class LL {
 
     public static void main(String[] args) {
         LL linkedList = new LL();
+        
         linkedList.addAtFirst(10);
         linkedList.addAtFirst(20);
         linkedList.addAtFirst(30);
