@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 class Node {
     int data;
     Node next;
@@ -10,65 +8,37 @@ class Node {
 }
 
 public class LL {
-    // Linked List a linear data structure where data is not stored in contigunuos
-    // memory like array .
-    // Instead of each contains data and the refernce of next data .
-    // There are types of Linked List
-    /*
-     * 1) Singly Linked List
-     * 2) Doubly Linked List
-     * 3) Circular Linked List
-     */
-
-    /*
-     * Methods in Linked List
-     * 1) addAtFirst(
-     * 2) isEmpty()
-     * 3) deleteAtFirst()
-     * 4) deleteAtLast()
-     * 5) printLL()
-     */
-
     Node head;
 
-    // AddAtFirst()
     public void addAtFirst(int data) {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     }
 
-    // deleteAtFirst()
     public void deleteAtFirst() {
-        if (isEmpty()) {
-            return;
-        }
+        if (isEmpty()) return;
         head = head.next;
     }
 
     public void deleteAtLast() {
-        if (isEmpty()) {
-            return;
-        }
-        // If only one node
+        if (isEmpty()) return;
+
         if (head.next == null) {
             head = null;
             return;
         }
-        // Find second-to-last node
+
         Node temp = head;
         while (temp.next.next != null) {
             temp = temp.next;
         }
-        temp.next = null; // Remove the last node
+        temp.next = null;
     }
 
-    // size()
     public int size() {
-        if (head == null)
-            return 0;
-        Node temp = head;
         int count = 0;
+        Node temp = head;
         while (temp != null) {
             count++;
             temp = temp.next;
@@ -76,27 +46,39 @@ public class LL {
         return count;
     }
 
-    // isEmpty()
     public boolean isEmpty() {
         return head == null;
     }
 
-    // printLL()
     public void printLL() {
         if (head == null) {
-            System.out.println("Linked list is empty !");
+            System.out.println("Linked list is empty!");
+            return;
         }
         Node temp = head;
-        while (temp.next != null) {
-            System.out.print(temp.data + " -> ");
+        while (temp != null) {
+            System.out.print(temp.data);
+            if (temp.next != null) System.out.print(" -> ");
             temp = temp.next;
         }
-        System.out.println(temp.data);
+        System.out.println();
+    }
+
+    public Node reverseLL(Node headNode) {
+        Node prev = null;
+        Node curr = headNode;
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        return prev;
     }
 
     public static void main(String[] args) {
         LL linkedList = new LL();
-        
+
         linkedList.addAtFirst(10);
         linkedList.addAtFirst(20);
         linkedList.addAtFirst(30);
@@ -104,11 +86,14 @@ public class LL {
         linkedList.addAtFirst(50);
 
         linkedList.printLL();
-        linkedList.deleteAtFirst();
 
-        System.out.println();
+        linkedList.deleteAtFirst();
         linkedList.printLL();
 
-        System.out.println(linkedList.isEmpty());
+        System.out.println("Is Empty: " + linkedList.isEmpty());
+
+        linkedList.head = linkedList.reverseLL(linkedList.head);
+        System.out.println("Reversed:");
+        linkedList.printLL();
     }
 }
