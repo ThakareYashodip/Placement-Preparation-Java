@@ -3,13 +3,13 @@ class Node {
     int data;
     Node next;
 
-    public Node(int data){
+    public Node(int data) {
         this.data = data;
         this.next = null;
     }
 }
 
- public class LinkdeListGFG {
+public class LinkdeListGFG {
 
     public Node insertInMiddle(Node head, int x) {
         Node newNode = new Node(x);
@@ -58,7 +58,8 @@ class Node {
 
     // Utility to build a list from array
     public static Node buildList(int[] arr) {
-        if (arr.length == 0) return null;
+        if (arr.length == 0)
+            return null;
 
         Node head = new Node(arr[0]);
         Node current = head;
@@ -73,9 +74,9 @@ class Node {
 
     // Main method
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        LinkdeListGFG sol = new LinkdeListGFG();
 
-        int[] input = {1, 2, 4};  // Linked list: 1 -> 2 -> 4
+        int[] input = { 1, 2, 4 }; // Linked list: 1 -> 2 -> 4
         int toInsert = 3;
 
         Node head = buildList(input);
