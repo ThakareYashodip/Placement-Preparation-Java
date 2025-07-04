@@ -17,7 +17,6 @@ class Node {
         // If the list is empty
         if (head == null) {
             return newNode;
-            
         }
 
         int length = size(head);
