@@ -72,6 +72,27 @@ public class LinkdeListGFG {
         return head;
     }
 
+    public static Node joinTheLists(Node head1, Node head2) {
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        // Add all nodes from first list
+        while (head1 != null) {
+            tail.next = new Node(head1.data);
+            tail = tail.next;
+            head1 = head1.next;
+        }
+
+        // Add all nodes from second list
+        while (head2 != null) {
+            tail.next = new Node(head2.data);
+            tail = tail.next;
+            head2 = head2.next;
+        }
+
+        return dummy.next; // skip dummy node
+    }
+    
     // Main method
     public static void main(String[] args) {
         LinkdeListGFG sol = new LinkdeListGFG();
